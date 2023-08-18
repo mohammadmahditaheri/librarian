@@ -26,6 +26,9 @@ class BooksServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom([
             realpath(__DIR__ . '/../database/migrations')
         ]);
+
+        // repository
+        $this->app->register(RepositoryProvider::class);
     }
 
     /**
