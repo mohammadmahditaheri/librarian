@@ -2,13 +2,9 @@
 
 namespace App\Services\Books\Contracts\Repositories;
 
-use App\Contracts\Repositories\GenericCreatorRepositoryInterface;
-use App\Contracts\Repositories\GenericFinderRepositoryInterface;
-use App\Contracts\Repositories\GenericReaderRepositoryInterface;
+use App\Contracts\Repositories\GenericRepositoryInterface;
 
 interface LanguageRepositoryInterface extends
-    GenericCreatorRepositoryInterface,
-    GenericFinderRepositoryInterface,
-    GenericReaderRepositoryInterface
+    GenericRepositoryInterface
 {
 }

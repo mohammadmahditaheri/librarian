@@ -2,18 +2,14 @@
 
 namespace App\Services\Books\Repositories;
 
-use App\Composables\Repositories\CreatesGenerically;
-use App\Composables\Repositories\FindsGenerically;
-use App\Composables\Repositories\GetsGenerically;
+use App\Composables\Repositories\ImplementsGenericRepository;
 use App\Data\Models\Language;
 use App\Services\Books\Contracts\Repositories\LanguageRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class LanguageRepository implements LanguageRepositoryInterface
 {
-    use CreatesGenerically,
-        FindsGenerically,
-        GetsGenerically;
+    use ImplementsGenericRepository;
 
     /**
      * @var class-string<Model>
