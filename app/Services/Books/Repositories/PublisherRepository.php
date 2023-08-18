@@ -12,7 +12,7 @@ class PublisherRepository implements PublisherRepositoryInterface
     use ImplementsGenericRepository;
 
     /**
-     * @var class-string<Model>
+     * @var class-string<Model> $model
      */
     private string $model = Publisher::class;
 }

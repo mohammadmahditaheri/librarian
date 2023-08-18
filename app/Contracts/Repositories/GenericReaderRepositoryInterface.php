@@ -2,9 +2,11 @@
 
 namespace App\Contracts\Repositories;
 
-use Illuminate\Database\Eloquent\Model;
+
+use Illuminate\Support\Collection;
 
 interface GenericReaderRepositoryInterface
 {
-    public function getAll(): ?Model; // it is only being used on ref tables like
+    // it is only being used on ref tables
+    public function getAll(): Collection|\Illuminate\Database\Eloquent\Collection;
 }

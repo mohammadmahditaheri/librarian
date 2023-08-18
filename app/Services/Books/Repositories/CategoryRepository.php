@@ -12,7 +12,7 @@ class CategoryRepository implements CategoryRepositoryInterface
     use ImplementsGenericRepository;
 
     /**
-     * @var class-string<Model>
+     * @var class-string<Model> $model
      */
-    private $model = Category::class;
+    private string $model = Category::class;
 }

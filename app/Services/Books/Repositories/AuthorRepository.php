@@ -12,7 +12,7 @@ class AuthorRepository implements AuthorRepositoryInterface
     use ImplementsGenericRepository;
 
     /**
-     * @var class-string<Model>
+     * @var class-string<Model> $model
      */
     private string $model = Author::class;
 }

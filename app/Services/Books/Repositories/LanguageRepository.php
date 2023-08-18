@@ -12,7 +12,7 @@ class LanguageRepository implements LanguageRepositoryInterface
     use ImplementsGenericRepository;
 
     /**
-     * @var class-string<Model>
+     * @var class-string<Model> $model
      */
     private string $model = Language::class;
 }

@@ -17,11 +17,6 @@ class AuthorSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 20; ++$i) {
-            $this->repository->create([
-                'full_name' => fake()->name(),
-                'updated_at' => null
-            ]);
-        }
+        //
     }
 }
