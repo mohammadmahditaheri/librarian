@@ -2,9 +2,11 @@
 
 namespace App\Services\Books\Providers;
 
+use App\Services\Books\Contracts\Repositories\AuthorRepositoryInterface;
 use App\Services\Books\Contracts\Repositories\CategoryRepositoryInterface;
 use App\Services\Books\Contracts\Repositories\LanguageRepositoryInterface;
 use App\Services\Books\Contracts\Repositories\PublisherRepositoryInterface;
+use App\Services\Books\Repositories\AuthorRepository;
 use App\Services\Books\Repositories\CategoryRepository;
 use App\Services\Books\Repositories\LanguageRepository;
 use App\Services\Books\Repositories\PublisherRepository;
@@ -36,6 +38,10 @@ class RepositoryProvider extends ServiceProvider
         $this->app->bind(
             PublisherRepositoryInterface::class,
             PublisherRepository::class
+        );
+        $this->app->bind(
+            AuthorRepositoryInterface::class,
+            AuthorRepository::class
         );
     }
 }
