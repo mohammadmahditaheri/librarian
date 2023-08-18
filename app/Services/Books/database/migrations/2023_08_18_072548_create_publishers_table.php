@@ -12,10 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(TablesEnum::LANGUAGES->value, function (Blueprint $table) {
+        Schema::create(TablesEnum::PUBLISHERS->value, function (Blueprint $table) {
             $table->id();
             $table->string('name', 128);
-            $table->timestamps();
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(TablesEnum::LANGUAGES->value);
+        Schema::dropIfExists(TablesEnum::PUBLISHERS->value);
     }
 };
