@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Services\Books\database\seeders\AuthorSeeder;
+use App\Services\Books\database\seeders\BookSeeder;
+use App\Services\Books\database\seeders\CategorySeeder;
+use App\Services\Books\database\seeders\LanguageSeeder;
+use App\Services\Books\database\seeders\PublisherSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +23,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+
+        $this->call([
+            LanguageSeeder::class,
+            CategorySeeder::class,
+            PublisherSeeder::class,
+            BookSeeder::class
+        ]);
     }
 }
