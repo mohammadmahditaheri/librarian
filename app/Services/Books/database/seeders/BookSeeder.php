@@ -4,7 +4,6 @@ namespace App\Services\Books\database\seeders;
 
 use App\Data\Models\Author;
 use App\Data\Models\Book;
-use App\Services\Books\Contracts\Repositories\AuthorRepositoryInterface;
 use App\Services\Books\Contracts\Repositories\CategoryRepositoryInterface;
 use App\Services\Books\Contracts\Repositories\LanguageRepositoryInterface;
 use App\Services\Books\Contracts\Repositories\PublisherRepositoryInterface;
@@ -17,7 +16,6 @@ class BookSeeder extends Seeder
         private readonly LanguageRepositoryInterface  $languageRepository,
         private readonly CategoryRepositoryInterface  $categoryRepository,
         private readonly PublisherRepositoryInterface $publisherRepository,
-        private readonly AuthorRepositoryInterface    $authorRepository,
     )
     {
     }
@@ -28,17 +26,18 @@ class BookSeeder extends Seeder
     public function run(): void
     {
         $languages = $this->languageRepository->getAll();
-        $authors = $this->authorRepository->getAll();
         $publishers = $this->publisherRepository->getAll();
         $categories = $this->categoryRepository->getAll();
 
-        $books = Book::factory()
-            ->count(100)
-            ->has(Author::factory()->count(2))
-            ->for($this->getRandom($categories), 'category')
-            ->for($this->getRandom($publishers), 'publisher')
-            ->for($this->getRandom($languages), 'language')
-            ->create();
+        foreach ($categories as $category) {
+            Book::factory()
+                ->count(100)
+                ->has(Author::factory()->count(2))
+                ->for($category, 'category')
+                ->for($this->getRandom($publishers), 'publisher')
+                ->for($this->getRandom($languages), 'language')
+                ->create();
+        }
     }
 
     private function getRandom(Collection|\Illuminate\Support\Collection $collection)
