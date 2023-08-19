@@ -2,7 +2,6 @@
 
 namespace App\Foundation\Composables\Responses;
 
-use App\Foundation\ValueObjects\Responses\ResponseValues;
 use Illuminate\Http\Response;
 
 trait SendsResponse
@@ -14,13 +13,9 @@ trait SendsResponse
         );
     }
 
-    private function assembleForAgent(
-        string $responseValueClass,
-        mixed $data,
-        mixed $extra
-    )
+    private function assembleDataResponse(mixed $data, mixed $extra = null)
     {
-        return (new $responseValueClass())
+        return (new $this->responseValuesClass())
             ->succeed()
             ->setOk()
             ->setData($data)

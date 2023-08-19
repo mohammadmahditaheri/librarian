@@ -8,14 +8,7 @@ trait SendsResponseForIOSAgent
 {
     use SendsResponse;
 
-    const GENERIC_EXTRA = 'This response is being requested by an android user agent.';
+    const GENERIC_EXTRA = 'This response is being requested by an ios user agent.';
 
-    private function assembleDataResponse(mixed $data, mixed $extra = null): IosResponseValues
-    {
-        return $this->assembleForAgent(
-            responseValueClass: IosResponseValues::class,
-            data: $data,
-            extra: $extra
-        );
-    }
+    private string $responseValuesClass = IosResponseValues::class;
 }

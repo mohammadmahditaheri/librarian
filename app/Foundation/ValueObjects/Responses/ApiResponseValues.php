@@ -4,7 +4,7 @@ namespace App\Foundation\ValueObjects\Responses;
 
 use App\Foundation\ValueObjects\Responses\ResponseValues;
 
-class ApiResponseValue extends ResponseValues
+class ApiResponseValues extends ResponseValues
 {
     public function getBody(): array
     {
