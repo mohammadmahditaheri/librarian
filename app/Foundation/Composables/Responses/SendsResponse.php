@@ -2,13 +2,11 @@
 
 namespace App\Foundation\Composables\Responses;
 
-use App\Foundation\ValueObjects\Responses\AndroidResponseValues;
+use App\Foundation\ValueObjects\Responses\ResponseValues;
 use Illuminate\Http\Response;
 
-trait SendsResponseForAndroid
+trait SendsResponse
 {
-    const GENERIC_EXTRA = 'This response is being requested by an android user agent.';
-
     public function sendData($data): Response
     {
         return response(
@@ -16,9 +14,13 @@ trait SendsResponseForAndroid
         );
     }
 
-    public function assembleDataResponse(mixed $data, mixed $extra = null): AndroidResponseValues
+    private function assembleForAgent(
+        string $responseValueClass,
+        mixed $data,
+        mixed $extra
+    )
     {
-        return (new AndroidResponseValues())
+        return (new $responseValueClass())
             ->succeed()
             ->setOk()
             ->setData($data)

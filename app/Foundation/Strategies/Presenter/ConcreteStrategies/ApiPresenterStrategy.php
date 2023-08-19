@@ -2,15 +2,17 @@
 
 namespace App\Foundation\Strategies\Presenter\ConcreteStrategies;
 
+use App\Foundation\Composables\Responses\SendsResponseForApiAgent;
 use App\Foundation\Strategies\Presenter\PresenterStrategyInterface;
-use App\Foundation\ValueObjects\Responses\AndroidResponseValues;
+use Illuminate\Http\Response;
 
 class ApiPresenterStrategy implements PresenterStrategyInterface
 {
+    use SendsResponseForApiAgent;
 
-    public function presentData(mixed $data)
+    public function presentData(mixed $data): Response
     {
-        // TODO: Implement present() method.
+        return $this->sendData($data);
     }
 
     /**
