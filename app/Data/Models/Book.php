@@ -14,6 +14,19 @@ class Book extends Model
     use HasFactory,
         BookRelationships;
 
+    const COLUMNS = [
+        'id',
+        'publisher_id',
+        'category_id',
+        'language_id',
+        'title',
+        'description',
+        'published_at_year',
+        'number_of_pages',
+        'created_at',
+        'updated_at'
+    ];
+
     protected $table = TablesEnum::BOOKS->value;
     protected $guarded = []; // TODO: development only
 
