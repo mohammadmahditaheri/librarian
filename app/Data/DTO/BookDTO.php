@@ -2,7 +2,7 @@
 
 namespace App\Data\DTO;
 
-use App\Composables\DTO\PresentsThroughResource;
+use App\Composables\Data\PresentsThroughResource;
 use App\Data\Models\Book;
 use App\Data\Models\Category;
 use App\Data\Models\Language;
