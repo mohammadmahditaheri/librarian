@@ -12,6 +12,10 @@ trait PresentsThroughResource
 {
     public function present(): JsonResource
     {
-        return new $this->resourceClass($this->model);
+        /**
+         * @var class-string<JsonResource> $resourceClass
+         */
+        $resourceClass = $this->getResourceClass();
+        return new $resourceClass($this->getModel());
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Data\DTO;
 
+use App\Contracts\DTO\BookDtoInterface;
 use App\Data\Models\Book;
 use App\Data\Models\Category;
 use App\Data\Models\Language;
@@ -13,7 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Support\Collection;
 
-class BookDTO
+class BookDTO implements BookDtoInterface
 {
     use PresentsThroughResource;
 
@@ -52,6 +53,11 @@ class BookDTO
     {
     }
 
+    public function getResourceClass(): string
+    {
+        return $this->resourceClass;
+    }
+
     public static function from(Book $book): BookDTO
     {
         $bookDto = new BookDTO(...self::instantiable($book));
@@ -72,6 +78,16 @@ class BookDTO
         return $arrayedDto;
     }
 
+    public function getModel(): ?Book
+    {
+        if ($this->model === null && $this->id !== null) {
+            $this->loadModel();
+        }
+        return $this->model;
+    }
+
+
+
     /**
      * ----------------------------------------------------
      * ------------------ Private Methods -----------------
@@ -86,13 +102,7 @@ class BookDTO
         ];
     }
 
-    public function getModel(): ?Book
-    {
-        if ($this->model === null && $this->id !== null) {
-            $this->loadModel();
-        }
-        return $this->model;
-    }
+
 
     private function loadModel(): void
     {

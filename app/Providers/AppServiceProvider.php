@@ -11,7 +11,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Dto
+        $this->app->register(DtoProvider::class);
     }
 
     /**

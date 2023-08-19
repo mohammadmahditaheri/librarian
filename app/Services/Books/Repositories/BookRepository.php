@@ -2,6 +2,7 @@
 
 namespace App\Services\Books\Repositories;
 
+use App\Contracts\DTO\BookDtoInterface;
 use App\Data\DTO\BookDTO;
 use App\Data\Models\Book;
 use App\Services\Books\Contracts\Repositories\BookRepositoryInterface;
@@ -14,7 +15,7 @@ class BookRepository implements BookRepositoryInterface
         return Book::all(Book::COLUMNS);
     }
 
-    public function create(BookDTO $bookDTO): ?BookDTO
+    public function create(BookDtoInterface $bookDTO): ?BookDtoInterface
     {
         $persistable = $bookDTO->toArray();
         if (!count($persistable)) {
@@ -26,7 +27,7 @@ class BookRepository implements BookRepositoryInterface
         );
     }
 
-    public function find(int $bookId): ?BookDTO
+    public function find(int $bookId): ?BookDtoInterface
     {
         $bookModel = $this->findModel($bookId);
         if (!$bookModel) {
@@ -36,7 +37,7 @@ class BookRepository implements BookRepositoryInterface
         return BookDTO::from($bookModel);
     }
 
-    public function findWithCopies(int $bookId): ?BookDTO
+    public function findWithCopies(int $bookId): ?BookDtoInterface
     {
         $bookModel = $this->findModelJoinedWith($bookId, 'copies');
         if (!$bookModel) {
@@ -46,7 +47,7 @@ class BookRepository implements BookRepositoryInterface
         return BookDTO::from($bookModel);
     }
 
-    public function findWithAll(int $bookId): ?BookDTO
+    public function findWithAll(int $bookId): ?BookDtoInterface
     {
         $model = $this->findModelJoinedWith($bookId, [
             'authors',
