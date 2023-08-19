@@ -11,4 +11,12 @@ class IosPresenterStrategy implements PresenterStrategyInterface
     {
         // TODO: Implement present() method.
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function presentNotFoundError(mixed $extra, string $message)
+    {
+        // TODO: Implement presentNotFoundError() method.
+    }
 }
