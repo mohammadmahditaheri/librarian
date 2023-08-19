@@ -2,14 +2,20 @@
 
 namespace App\Foundation\Strategies\Presenter\ConcreteStrategies;
 
+use App\Foundation\Composables\Responses\SendsResponseForIOSAgent;
 use App\Foundation\Strategies\Presenter\PresenterStrategyInterface;
+use Illuminate\Http\Response;
 
 class IosPresenterStrategy implements PresenterStrategyInterface
 {
+    use SendsResponseForIOSAgent;
 
-    public function presentData(mixed $data)
+    /**
+     * @inheritDoc
+     */
+    public function presentData(mixed $data): Response
     {
-        // TODO: Implement present() method.
+        return $this->sendData($data);
     }
 
     /**
