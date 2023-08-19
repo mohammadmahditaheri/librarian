@@ -58,8 +58,11 @@ class BookDTO implements BookDtoInterface
         return $this->resourceClass;
     }
 
-    public static function from(Book $book): BookDTO
+    public static function from(Book|null $book): ?BookDTO
     {
+        if (!$book) {
+            return null;
+        }
         $bookDto = new BookDTO(...self::instantiable($book));
         $bookDto->model = $book;
 
