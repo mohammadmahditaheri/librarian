@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create(TablesEnum::AUTHORS->value, function (Blueprint $table) {
             $table->id();
-            $table->string('full_name', 128);
+            $table->string('name', 128);
             $table->timestamps();
         });
     }
