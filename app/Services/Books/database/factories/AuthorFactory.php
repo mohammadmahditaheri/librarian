@@ -6,7 +6,7 @@ use App\Data\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<\App\Models\Model>
+ * @extends Factory<Author>
  */
 class AuthorFactory extends Factory
 {
