@@ -2,13 +2,17 @@
 
 namespace App\Foundation\Strategies\Presenter\ConcreteStrategies;
 
+use App\Foundation\Composables\Responses\SendsResponseForAjaxAgent;
 use App\Foundation\Strategies\Presenter\PresenterStrategyInterface;
+use Illuminate\Http\Response;
 
 class AjaxPresenterStrategy implements PresenterStrategyInterface
 {
-    public function presentData(mixed $data)
+    use SendsResponseForAjaxAgent;
+
+    public function presentData(mixed $data): Response
     {
-        // TODO: Implement present() method.
+        return $this->sendData($data);
     }
 
     /**
