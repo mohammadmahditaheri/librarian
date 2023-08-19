@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Composables\Models\Relationships;
+namespace App\Foundation\Composables\Models\Relationships;
 
 use App\Data\Models\Book;
-use App\Enums\TablesEnum;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 trait AuthorRelationships

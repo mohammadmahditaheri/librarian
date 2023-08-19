@@ -2,10 +2,10 @@
 
 namespace App\Data\Models;
 
-use App\Composables\Models\Relationships\BookCopyRelationships;
 use App\Enums\TablesEnum;
-use Illuminate\Database\Eloquent\Model;
+use App\Foundation\Composables\Models\Relationships\BookCopyRelationships;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class BookCopy extends Model
 {

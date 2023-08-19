@@ -2,8 +2,8 @@
 
 namespace App\Services\Books\Repositories;
 
-use App\Composables\Repositories\ImplementsGenericRepository;
 use App\Data\Models\Author;
+use App\Foundation\Composables\Repositories\ImplementsGenericRepository;
 use App\Services\Books\Contracts\Repositories\AuthorRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 

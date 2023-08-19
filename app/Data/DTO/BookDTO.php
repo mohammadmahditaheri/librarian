@@ -2,11 +2,11 @@
 
 namespace App\Data\DTO;
 
-use App\Composables\Data\PresentsThroughResource;
 use App\Data\Models\Book;
 use App\Data\Models\Category;
 use App\Data\Models\Language;
 use App\Data\Models\Publisher;
+use App\Foundation\Composables\Data\PresentsThroughResource;
 use App\Services\Books\Contracts\Repositories\BookRepositoryInterface;
 use App\Services\Books\Http\Resources\BookResource;
 use Carbon\Carbon;

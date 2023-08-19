@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Composables\Repositories;
+namespace App\Foundation\Composables\Repositories;
 
 trait CreatesGenerically
 {

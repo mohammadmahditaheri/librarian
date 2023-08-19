@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Composables\Repositories;
+namespace App\Foundation\Composables\Repositories;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
 trait GetsGenerically

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Composables\Models\Relationships;
+namespace App\Foundation\Composables\Models\Relationships;
 
 use App\Data\Models\Book;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

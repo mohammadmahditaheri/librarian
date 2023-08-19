@@ -2,12 +2,12 @@
 
 namespace App\Data\Models;
 
-use App\Composables\Models\Relationships\BookRelationships;
 use App\Enums\TablesEnum;
+use App\Foundation\Composables\Models\Relationships\BookRelationships;
 use App\Services\Books\database\factories\BookFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {

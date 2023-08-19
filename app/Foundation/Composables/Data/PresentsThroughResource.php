@@ -1,9 +1,7 @@
 <?php
 
-namespace App\Composables\Data;
+namespace App\Foundation\Composables\Data;
 
-use App\Services\Books\Http\Resources\BookResource;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**

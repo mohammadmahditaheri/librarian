@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Composables\Models\Relationships;
+namespace App\Foundation\Composables\Models\Relationships;
 
 use App\Data\Models\Author;
 use App\Data\Models\BookCopy;
