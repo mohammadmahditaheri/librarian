@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Services\Books\database\seeders\AuthorSeeder;
+use App\Services\Books\database\seeders\BookCopySeeder;
 use App\Services\Books\database\seeders\BookSeeder;
 use App\Services\Books\database\seeders\CategorySeeder;
 use App\Services\Books\database\seeders\LanguageSeeder;
@@ -29,7 +30,8 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             CategorySeeder::class,
             PublisherSeeder::class,
-            BookSeeder::class
+            BookSeeder::class,
+            BookCopySeeder::class
         ]);
     }
 }
