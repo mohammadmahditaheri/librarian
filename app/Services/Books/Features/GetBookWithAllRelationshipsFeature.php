@@ -2,9 +2,9 @@
 
 namespace App\Services\Books\Features;
 
-use App\Contracts\Presenter\CreatesConcretePresenter;
-use App\Contracts\Presenter\PresentsViaPresenterStrategy;
 use App\Domains\Book\Jobs\GetBookWithAllRelationshipsJob;
+use App\Foundation\Composables\Presenters\CreatesConcretePresenter;
+use App\Foundation\Composables\Presenters\PresentsViaPresenterStrategy;
 use Illuminate\Contracts\Foundation\Application as ApplicationContract;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
