@@ -3,6 +3,7 @@
 namespace App\Contracts\DTO;
 
 use App\Data\Models\Book;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 interface BookDtoInterface
 {
@@ -13,4 +14,6 @@ interface BookDtoInterface
     public function toArray(): array;
 
     public function getResourceClass(): string;
+
+    public function wrapInResource(): JsonResource;
 }

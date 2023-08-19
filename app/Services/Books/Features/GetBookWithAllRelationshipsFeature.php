@@ -38,7 +38,7 @@ class GetBookWithAllRelationshipsFeature extends Feature
 
         return $this->present(
             presenter: $presenter,
-            data: $book
+            data: $book->wrapInResource()
         );
     }
 }

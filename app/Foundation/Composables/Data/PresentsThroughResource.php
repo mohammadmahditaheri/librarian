@@ -10,7 +10,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  */
 trait PresentsThroughResource
 {
-    public function present(): JsonResource
+    public function wrapInResource(): JsonResource
     {
         /**
          * @var class-string<JsonResource> $resourceClass
