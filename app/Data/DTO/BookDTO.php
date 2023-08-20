@@ -90,7 +90,6 @@ class BookDTO implements BookDtoInterface
     }
 
 
-
     /**
      * ----------------------------------------------------
      * ------------------ Private Methods -----------------
@@ -104,7 +103,6 @@ class BookDTO implements BookDtoInterface
             ...$book->getRelations()
         ];
     }
-
 
 
     private function loadModel(): void

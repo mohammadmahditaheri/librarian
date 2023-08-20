@@ -3,7 +3,6 @@
 namespace App\Services\Books\Http\Resources;
 
 use App\Data\Resources\SingleNameResource;
-use App\Http\Resources\CopyResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
