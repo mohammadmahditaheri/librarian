@@ -173,6 +173,7 @@ return [
          *  Lucid Services
          */
         App\Services\Books\Providers\BooksServiceProvider::class,
+        App\Services\Auth\Providers\AuthServiceProvider::class,
 
     ])->toArray(),
 
