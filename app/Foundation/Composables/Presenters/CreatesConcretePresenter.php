@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Presenter;
+namespace App\Foundation\Composables\Presenters;
 
 use App\Foundation\Strategies\Presenter\ConcreteStrategies\AjaxPresenterStrategy;
 use App\Foundation\Strategies\Presenter\ConcreteStrategies\AndroidPresenterStrategy;
