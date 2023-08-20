@@ -21,9 +21,7 @@ Route::group(['prefix' => 'v1/'], function () {
      * books
      */
     Route::prefix('/books')->group(function () {
-        Route::get('/', function () {
-            return response()->json(['path' => 'GET /api/books']);
-        });
+        Route::get('/', [GetBookController::class, 'index']);
         Route::get('/{bookId}', [GetBookController::class, 'show']);
     });
 
